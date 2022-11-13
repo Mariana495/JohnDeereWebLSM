@@ -1,0 +1,17 @@
+.t-header{
+    background-color: #d4d4d4;
+    border: 1px solid;
+}
+
+tr{
+    font-size: 3vh;
+    height: 4vw;
+}
+
+td, th{
+    border: 1px solid grey;
+}
+
+table{
+    border-collapse: collapse;
+}

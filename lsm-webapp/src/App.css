@@ -1,0 +1,88 @@
+.v-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.text {
+  font-size: calc(2.5vw);
+  color: white;
+  margin-left: 2vw;
+}
+
+.App-header {
+  background-color: #024959;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+p{
+  font-size: 4vh;
+}
+
+h1{
+  font-size: 6vh;
+}
+
+/* Estilos del menú en cascada */
+
+.navbar{
+  height: 15vh;
+}
+
+.navbar-nav{
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2vw;
+}
+
+.navbar-item{
+  width: 10vw;
+  height: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-menu{
+  width: 10vw;
+  height: 4vw;
+  background-color: #F1EEDB;
+  border-radius: 1vw;
+  padding: 1vw;
+  margin: 2px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown{
+  position: absolute;
+  top: 6svw;
+  width: 10vw;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+
+.menu-item{
+  height: 4vw;
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  transition: background var(--speed);
+  padding: 0.5vw;
+}
+
+.menu-item:hover{
+  background-color: #F25032;
+}
+
