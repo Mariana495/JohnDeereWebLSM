@@ -1,4 +1,4 @@
-export const UserData = [
+export const CategoryData = [
     {
         categoria: 'Colores',
         usuarios: 50

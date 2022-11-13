@@ -1,6 +1,6 @@
 import {React, useState} from 'react';
 import BarChart from '../components/barChart';
-import {UserData} from '../media/Data'
+import {UserData} from '../media/DataUsuarios'
 
 function AdminVista(){
     const [userData, setUserData] = useState({
