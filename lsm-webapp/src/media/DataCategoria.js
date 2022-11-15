@@ -1,4 +1,6 @@
-export const CategoryData = [
+Object.defineProperty(exports, "__esModule", { value: true });
+
+exports.CategoryData = [
     {
         categoria: 'Colores',
         usuarios: 50
