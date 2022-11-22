@@ -8,6 +8,7 @@ tr{
     font-size: 3vh;
     height: 4vw;
     border: 1px solid grey;
+    flex-wrap: wrap;
 }
 
 td, th{
@@ -17,4 +18,5 @@ td, th{
 table{
     border-collapse: collapse;
     width: 70vw;
+    margin: auto;
 }

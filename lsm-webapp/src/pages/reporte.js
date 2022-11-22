@@ -1,6 +1,6 @@
 import '../stylesheets/styles.css'
 
-import Table from '../components/table'
+import {Table} from '../components/table'
 
 function ReporteUsuarios(){
     return(

@@ -1,40 +1,58 @@
-import { UserData } from '../media/DataUsuarios'
-import { useEfect } from 'react'
+import {database} from '../utils/firebase'
+import {ref, onValue, child} from 'firebase/database'
+import React, { useEffect, useState } from 'react';
 import '../stylesheets/reporte.css'
 
-function table(){
-    const column = Object.keys(UserData[0]);
+const db = database;
 
-    const ThData = () => {
-        return column.map((data) => {
-            return <th key = {data} className = 't-header'> {data} </th>
-        })
+export class Table extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            tableData: []
+        }
     }
 
-    const TdData =() =>{
-        return UserData.map((data)=>{
-          return(
-              <tr>
-                   {
-                      column.map((v)=>{
-                          return <td>{data[v]}</td>
-                      })
-                   }
-              </tr>
-          )
-        })
-   }
+    componentDidMount(){
+        const dbRef = ref(db, 'Usuarios');
 
-    return(
-        <table Style = 'margin: auto; '>
-            <thead>
-                <tr> {ThData()} </tr>
-            </thead>
-            <tbody>
-                {TdData()}
-            </tbody>
-        </table>
-    );
+        onValue(dbRef, (snapshot) => {
+            let records = [];
+            let r = "";
+            snapshot.forEach(childSnapshot => {
+                let keyName = childSnapshot.key;
+                let cant = childSnapshot.child("listaCompletadas").exists() && Object.keys(childSnapshot.child("listaCompletadas").val()).length || 0;
+                let data = childSnapshot.val();
+                records.push({"key": keyName, "cant": cant, "data": data});
+            });
+            this.setState({tableData: records});
+        });
+    }
+
+    render(){
+        return(
+            <table className='table'>
+                <thead className='t-header'>
+                    <tr>
+                        <th>Index</th>
+                        <th>Username</th>
+                        <th>No. completadas</th>
+                        <th>Categorías completadas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.state.tableData.map((row, index) => {
+                        return(
+                            <tr>
+                                <td> {index} </td>
+                                <td> {row.key} </td>
+                                <td> {row.cant} </td>
+                                <td> {row.data.listaCompletadas} </td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+            </table>
+        )
+    }
 }
-
-export default table;

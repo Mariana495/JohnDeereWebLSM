@@ -4,7 +4,7 @@ import '../stylesheets/styles.css' // Estilo del botón y texto
 function CambiosUsers(){
     return(
         <div className="div-central">
-            <h1> Altas, bajas y cambios </h1>
+            <h1> Usuarios </h1>
             <div Style = 'display: flex; align-items: center;'>
                 <div Style = "width: 40vw; height: auto; display: inline-block; margin: auto;">
                     <p> En esta parte podrás subir un archivo CSV, XLS o XLSX con todos los datos de los usuarios que se van a agregar, editar o eliminar. <br/> <br/> Selecciona la acción a realizar y después arrastra el archivo al espacio indicado o búscalo manualmente. </p>

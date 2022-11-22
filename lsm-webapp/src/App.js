@@ -22,9 +22,9 @@ function App() {
 						<Route path = '' element={<Navigate to="/inicio" replace={true} />}/>
 						<Route path='/inicio' element={<Principal/>}/>
 						<Route path='/login' element={<Login/>}/>
-						<Route path='/inicio-admin' element={<InicioAdmin/>}/>
+						<Route path='/resumen' element={<InicioAdmin/>}/>
 						<Route path='/reporte' element={<Reporte/>}/>
-						<Route path='/cambios' element={<CambiosUsuarios/>}/>
+						<Route path='/usuarios' element={<CambiosUsuarios/>}/>
 					</Routes>
 				</BrowserRouter>
     		</body>

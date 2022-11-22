@@ -59,9 +59,9 @@ function DropdownMenu(){
 
     return (
         <div className = "dropdown">
-            <DdownItem r = '/inicio-admin' text = 'Inicio' />
+            <DdownItem r = '/resumen' text = 'Resumen' />
             <DdownItem r = '/reporte' text = 'Reporte' />
-            <DdownItem r = '/cambios' text = 'Cambios' />
+            <DdownItem r = '/usuarios' text = 'Usuarios' />
         </div>
     );
 }
