@@ -59,7 +59,6 @@ function DropdownMenu(){
 
     return (
         <div className = "dropdown">
-            <DdownItem r = '/resumen' text = 'Resumen' />
             <DdownItem r = '/reporte' text = 'Reporte' />
             <DdownItem r = '/usuarios' text = 'Usuarios' />
         </div>

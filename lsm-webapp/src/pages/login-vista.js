@@ -4,6 +4,7 @@ import '../stylesheets/styles.css' // De esta solo se necesita el estilo del bot
 
 import {useNavigate} from 'react-router-dom'; // Redireccionamient hacia "Reporte"
 import { useForm } from "react-hook-form"; // Libreria para obtener valores del formulario
+import { useState } from 'react';
 
 import { BsFillPersonFill, BsAsterisk } from 'react-icons/bs'; // Librería para iconos para el formulario 
 import BigIcon from '../media/icon-lsm.png'
@@ -34,7 +35,7 @@ function Login(){
                 // Password del usuario
                 let data = childSnapshot.child("password").val();
                 // PErmiso de administrador (si lo tiene)
-                let pass = childSnapshot.child("administrador").val();
+                let pass = childSnapshot.child("admin").val();
                 // objeto temporal que almacena los datos 
                 usuarios.push({"username": keyName, "password": data, "admin": pass});
             });
@@ -42,14 +43,12 @@ function Login(){
 
         usuarios.forEach(user => {
             // si el usuario y contraseña son correctos y el usuario tiene permisos de administrador, puede acceder a los datos
-            if ((user.username == values.user && user.password == values.password) && user.admin == true){
-                navigate('/resumen');
+            if ((user.username === values.user && user.password === values.password) && user.admin === true){
+                navigate('/reporte');
             }
         });
         
     };
-
-    
 
     return (
         <div Style = "height: 85vh">
